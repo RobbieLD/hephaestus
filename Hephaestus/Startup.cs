@@ -11,7 +11,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace Hephaestus
 {
@@ -50,6 +49,11 @@ namespace Hephaestus
             {
                 endpoints.MapControllers();
             });
+
+            // Create the database
+            using (var scope = app.ApplicationServices.CreateScope())
+            using (var context = scope.ServiceProvider.GetService<LoggingContext>())
+                context.Database.Migrate();
         }
     }
 }

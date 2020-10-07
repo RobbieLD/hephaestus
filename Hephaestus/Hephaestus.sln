@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hephaestus", "Hephaestus.csproj", "{2F00EEBE-589E-44AC-8565-B5E5AA563D4B}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{72491814-DD92-4C44-91C3-F16AA21A877D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{2F00EEBE-589E-44AC-8565-B5E5AA563D4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F00EEBE-589E-44AC-8565-B5E5AA563D4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F00EEBE-589E-44AC-8565-B5E5AA563D4B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{72491814-DD92-4C44-91C3-F16AA21A877D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{72491814-DD92-4C44-91C3-F16AA21A877D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{72491814-DD92-4C44-91C3-F16AA21A877D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{72491814-DD92-4C44-91C3-F16AA21A877D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
