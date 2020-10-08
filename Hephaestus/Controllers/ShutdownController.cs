@@ -17,15 +17,16 @@ namespace Hephaestus.Controllers
             _loggingService = logger;
         }
 
-        [HttpGet]
-        public string Get()
+        [HttpPost]
+        public string Post([FromQuery] int delay)
         {
             _loggingService.LogInformation("Shutdown Initiated");
             
             try
             {
-                Process.Start("shutdown", "/s /t 1");
-            } catch(Exception e)
+                _ = Process.Start(string.Format("shutdown", "/s /t {0}", delay));
+            }
+            catch (Exception e)
             {
                 _loggingService.LogError(e.Message);
                 return e.Message;

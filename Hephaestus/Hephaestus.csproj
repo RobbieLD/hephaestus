@@ -1,8 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>775b3ab2-42ab-4997-b12f-4044dc707cd7</UserSecretsId>
+    <!--<OutputType>WinExe</OutputType>-->
+    <!--https://stackoverflow.com/questions/45200378/how-to-hide-kestrel-console-->
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +14,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.8" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
   </ItemGroup>
 
 
