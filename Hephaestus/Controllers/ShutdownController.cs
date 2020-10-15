@@ -34,13 +34,5 @@ namespace Hephaestus.Controllers
 
             return "Success";
         }
-
-        private void Shutdown()
-        {
-            var psi = new ProcessStartInfo("shutdown", "/s /t 1");
-            psi.CreateNoWindow = true;
-            psi.UseShellExecute = false;
-            Process.Start(psi);
-        }
     }
 }

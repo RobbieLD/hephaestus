@@ -8,12 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.8">
+    <PackageReference Include="ByteSize" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.9">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.9" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="3.1.9" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="4.7.0" />
     <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
   </ItemGroup>
 

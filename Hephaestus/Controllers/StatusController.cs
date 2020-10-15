@@ -1,6 +1,9 @@
-﻿using Hephaestus.Services;
+﻿using Hephaestus.Models;
+using Hephaestus.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 
 namespace Hephaestus.Controllers
 {
@@ -21,6 +24,21 @@ namespace Hephaestus.Controllers
             _loggingService.LogInformation("Status Requested");
 
             return "Server Running";
+        }
+
+        [Route("hdd")]
+        [HttpGet]
+        public DriveStatus[] Hdd()
+        {
+            _loggingService.LogInformation("Hdd Requested");
+            List<DriveStatus> statuses = new List<DriveStatus>();
+
+            foreach(DriveInfo drive in DriveInfo.GetDrives())
+            {
+                statuses.Add(new DriveStatus(drive.Name, ByteSizeLib.ByteSize.FromBytes(drive.AvailableFreeSpace).ToString()));
+            }
+
+            return statuses.ToArray();
         }
     }
 }
