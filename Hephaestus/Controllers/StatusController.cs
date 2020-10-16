@@ -1,6 +1,7 @@
 ﻿using Hephaestus.Models;
 using Hephaestus.Services;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -35,7 +36,13 @@ namespace Hephaestus.Controllers
 
             foreach(DriveInfo drive in DriveInfo.GetDrives())
             {
-                statuses.Add(new DriveStatus(drive.Name, ByteSizeLib.ByteSize.FromBytes(drive.AvailableFreeSpace).ToString()));
+                long totalFree = drive.AvailableFreeSpace;
+                long total = drive.TotalSize;
+                double percentFull = Math.Round((double)(total - totalFree) / total * 100, 2);
+                statuses.Add(new DriveStatus(drive.Name,
+                    ByteSizeLib.ByteSize.FromBytes(totalFree).ToString(),
+                    ByteSizeLib.ByteSize.FromBytes(total).ToString(),
+                    percentFull));
             }
 
             return statuses.ToArray();

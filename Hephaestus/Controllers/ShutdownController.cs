@@ -24,7 +24,15 @@ namespace Hephaestus.Controllers
             
             try
             {
-                _ = Process.Start(string.Format("shutdown", "/s /t {0}", delay));
+                string args = string.Format("/s /f /t {0}", delay);
+                var psi = new ProcessStartInfo()
+                {
+                    CreateNoWindow = false,
+                    UseShellExecute = false,
+                    FileName = @"C:\Windows\SysWOW64\shutdown.exe",
+                    Arguments = args
+                };
+                Process.Start(psi);
             }
             catch (Exception e)
             {

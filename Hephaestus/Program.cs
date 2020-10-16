@@ -15,6 +15,7 @@ namespace Hephaestus
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseUrls("https://0.0.0.0:5051","http://0.0.0.0:5050");
                 }).UseWindowsService();
     }
 }
